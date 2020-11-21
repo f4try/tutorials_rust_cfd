@@ -1,0 +1,14 @@
+[package]
+name = "cfd_tut"
+version = "0.1.0"
+authors = ["zz-u <zongzh.hd@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ndarray = "0.13"
+gnuplot = "0.0.37"
+plotters = "0.3"
+#criterion-plot = "0.4.3"
+#itertools-num = "0.1.3"
