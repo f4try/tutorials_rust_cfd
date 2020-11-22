@@ -4,7 +4,7 @@ use gnuplot::*;
 fn analytical_u(x:f64,t:f64,nu:f64)->f64{
     -2.*nu*(-(-8.*t + 2.*x)*(-(-4.*t + x).powi(2)/(4.*nu*(t + 1.))).exp()/(4.*nu*(t + 1.)) - (-8.*t + 2.*x - 4.*PI)*(-(-4.*t + x - 2.*PI).powi(2)/(4.*nu*(t + 1.))).exp()/(4.*nu*(t + 1.)))/((-(-4.*t + x - 2.*PI).powi(2)/(4.*nu*(t + 1.))).exp() + (-(-4.*t + x).powi(2)/(4.*nu*(t + 1.))).exp()) + 4.
 }
-fn linspace(start:f64,end:f64,n:usize)->Vec<f64>{
+pub fn linspace(start:f64,end:f64,n:usize)->Vec<f64>{
     let mut result = vec![start;n];
     let interval = (end-start)/n as f64;
     for i in 1..n{

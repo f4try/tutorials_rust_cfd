@@ -67,7 +67,7 @@ fn main(){
             // fg.axes3d().surface(&u,nx,ny,Some((0.,0.,2.,2.)),&[]);
     }
     println!("{:?}",now.elapsed());
-    // fg.axes3d().surface(&u,nx,ny,Some((0.,0.,2.,2.)),&[]);
+    fg.axes3d().surface(&u,nx,ny,Some((0.,0.,2.,2.)),&[]);
     // fg.show();
     let now = SystemTime::now();
     let mut u = Array2::<f64>::ones((ny,nx));
@@ -86,7 +86,7 @@ fn main(){
         Zip::from(u.slice_mut(s![-1,..])).apply(|ue|*ue=1.);
         Zip::from(u.slice_mut(s![..,0])).apply(|ue|*ue=1.);
         Zip::from(u.slice_mut(s![..,-1])).apply(|ue|*ue=1.);
-        fg.axes3d().surface(&u,nx,ny,Some((0.,0.,2.,2.)),&[]);
+        // fg.axes3d().surface(&u,nx,ny,Some((0.,0.,2.,2.)),&[]);
     }
 
     println!("{:?}",now.elapsed());
