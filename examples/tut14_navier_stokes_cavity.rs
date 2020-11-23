@@ -94,7 +94,7 @@ fn cavity_flow(nt:usize,u:&mut Array2<f64>,v:&mut Array2<f64>
 fn main(){
     let nx = 41;
     let ny = 41;
-    let nt = 100;
+    let nt = 700;
     let nit = 50;
     let c = 1.;
     let dx = 2./(nx-1) as f64;
