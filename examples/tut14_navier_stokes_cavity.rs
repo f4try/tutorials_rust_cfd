@@ -31,8 +31,8 @@ fn pressure_poisson(p:&mut Array2<f64>,dx:f64,dy:f64,b:&Array2<f64>,nit:usize,rh
         pn = p.clone();
         for i in 1..row-1{
             for j in 1..col-1{
-                p[[i,j]] = ((pn[[i+1,j]]+pn[[i+1,j]])*dy.powi(2)
-                    +(pn[[i,j+1]]+pn[[i,j+1]])*dx.powi(2))/2.
+                p[[i,j]] = ((pn[[i+1,j]]+pn[[i-1,j]])*dy.powi(2)
+                    +(pn[[i,j+1]]+pn[[i,j-1]])*dx.powi(2))/2.
                     /(dx.powi(2)+dy.powi(2))
                     -rho*dx.powi(2)*dy.powi(2)/2.
                     /(dx.powi(2)+dy.powi(2))*b[[i,j]];
