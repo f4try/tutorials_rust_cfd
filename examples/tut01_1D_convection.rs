@@ -1,11 +1,13 @@
 use ndarray::{Array1,s,Zip};
 use gnuplot::*;
+use std::time::{Duration, SystemTime};
 macro_rules! printVar {
     ($v:expr) => {
         println!("{:?}",$v);
     };
 }
 fn main(){
+    let now = SystemTime::now();
     let nx = 41;
     let dx = 2./(nx-1) as f64;
     let nt = 25;
@@ -30,6 +32,8 @@ fn main(){
     }
     printVar!(un);
     fg1.show().unwrap();
+
+    println!("{:?}",now.elapsed());
 
     // let mut fg2=Figure::new();
     // fg2.axes2d().lines_points(&Array1::linspace(0.,2.,nx),&un,&[Caption("u0")]);
